@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "brandName": "Tesla",
+    "Img": "https://i.ibb.co/KwWsHRS/tesla.jpg",
+    "title": "Tesla Electric Vehicles"
+  },
+  {
+    "id": 2,
+    "brandName": "Toyota",
+    "Img": "https://i.ibb.co/jy8Bgb4/toyota.jpg",
+    "title": "Toyota Cars and Trucks"
+  },
+  {
+    "id": 3,
+    "brandName": "Ferrari",
+    "Img": "https://i.ibb.co/QmQHzxC/ferrari.png",
+    "title": "Ferrari Sports Cars"
+  },
+  {
+    "id": 4,
+    "brandName": "BMW",
+    "Img": "bmw.jpg",
+    "title": "BMW Luxury Vehicles"
+  },
+  {
+    "id": 5,
+    "brandName": "Mercedes Benz",
+    "Img": "mercedes.jpg",
+    "title": "Mercedes-Benz Luxury Cars"
+  },
+  {
+    "id": 6,
+    "brandName": "Mazda",
+    "Img": "mazda.jpg",
+    "title": "Mazda Innovative Vehicles"
+  }
+]
