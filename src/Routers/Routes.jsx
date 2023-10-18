@@ -5,6 +5,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        // element: <Home></Home>,
+      },
+    ],
   },
 ]);
 export default router;
