@@ -14,25 +14,25 @@
   {
     "id": 3,
     "brandName": "Ferrari",
-    "Img": "https://i.ibb.co/QmQHzxC/ferrari.png",
+    "Img": "https://i.ibb.co/R3mWjDW/ferrari-removebg-preview-1.png",
     "title": "Ferrari Sports Cars"
   },
   {
     "id": 4,
     "brandName": "BMW",
-    "Img": "bmw.jpg",
+    "Img": "https://i.ibb.co/HYgsD8h/bmw-removebg-preview.png",
     "title": "BMW Luxury Vehicles"
   },
   {
     "id": 5,
     "brandName": "Mercedes Benz",
-    "Img": "mercedes.jpg",
+    "Img": "https://i.ibb.co/JsZRJnP/Mercedes-Benz.png",
     "title": "Mercedes-Benz Luxury Cars"
   },
   {
     "id": 6,
     "brandName": "Mazda",
-    "Img": "mazda.jpg",
+    "Img": "https://i.ibb.co/WnSvC3Z/mazda-3.jpg",
     "title": "Mazda Innovative Vehicles"
   }
 ]
