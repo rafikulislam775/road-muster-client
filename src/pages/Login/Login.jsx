@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
 import useAuth from "../../Hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
@@ -6,6 +6,8 @@ import swal from "sweetalert";
 const Login = () => {
   const scale = 1.1;
   const { loginUser, googleSignIn } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,9 +16,10 @@ const Login = () => {
     console.log(email, password);
     loginUser(email, password)
       //   .then((res) => console.log(res.user))
-      .then(() =>
-        swal("Good job!", "now you are login successfully!", "success")
-      )
+      .then(() => {
+        navigate(location?.state ? location.state : "/");
+        swal("Good job!", "now you are login successfully!", "success");
+      })
 
       //   .then((err) => console.error(err.message));
       .catch(() =>
@@ -26,9 +29,10 @@ const Login = () => {
   //handle google login
   const handleGoogleLogin = () => {
     googleSignIn()
-      .then(() =>
-        swal("Good job!", "now you are login successfully!", "success")
-      )
+      .then(() => {
+        navigate(location?.state ? location.state : "/");
+        swal("Good job!", "now you are login successfully!", "success");
+      })
       .catch(() =>
         swal("Oops", "Something went wrong ! please try again", "error")
       );

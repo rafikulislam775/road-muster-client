@@ -22,7 +22,7 @@ const Register = () => {
       return;
     }
 
-    createUsers(email, password)
+    createUsers(email, password,name)
       //   .then((res) => console.log(res?.user))
       .then(() => swal("Welcome!", "You are SignUp successfully!", "success"))
 
