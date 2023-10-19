@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
 import useAuth from "../../Hooks/useAuth";
+import swal from "sweetalert";
 const Register = () => {
   const scale = 1.1;
   const { createUsers } = useAuth();
@@ -11,9 +12,24 @@ const Register = () => {
     const name = form.name.value;
     const password = form.password.value;
     console.log(name, email, password);
+    //regular expression for password validation
+    if (!/^(?=.*[A-Z]).{6,}$/.test(password)) {
+      swal(
+        "Oops",
+        "Password must be at least 6 characters long and contain at least one uppercase letter.",
+        "error"
+      );
+      return;
+    }
+
     createUsers(email, password)
-      .then((res) => console.log(res?.user))
-      .catch((error) => console.error(error?.message));
+      //   .then((res) => console.log(res?.user))
+      .then(() => swal("Welcome!", "You are SignUp successfully!", "success"))
+
+      //   .catch((error) => console.error(error?.message));
+      .catch(() =>
+        swal("Oops", "Something went wrong ! please try again", "error")
+      );
   };
   return (
     <div
