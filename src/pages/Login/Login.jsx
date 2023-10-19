@@ -1,13 +1,18 @@
 import { NavLink } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
+import useAuth from "../../Hooks/useAuth";
 const Login = () => {
   const scale = 1.1;
+  const { loginUser } = useAuth();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    loginUser(email, password)
+      .then((res) => console.log(res.user))
+      .then((err) => console.error(err.message));
   };
   return (
     <div
