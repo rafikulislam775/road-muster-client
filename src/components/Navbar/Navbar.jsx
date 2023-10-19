@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { FcBusinessman } from "react-icons/fc";
+import { RiLoginCircleFill } from "react-icons/ri";
 
 const Navbar = () => {
   const { logOut, user, userName } = useAuth();
@@ -109,12 +111,18 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{menus}</ul>
       </div>
       <div className="navbar-end">
-        <h1 className="mr-5">{user ? user.displayName || userName : ""}</h1>
+        <h1 className="mr-5">{user ? user?.displayName || userName : ""} </h1>
         <button className="btn btn-outline btn-info btn-sm  ">
           {user ? (
-            <p onClick={handleSignOut}>logout</p>
+            <>
+              <p onClick={handleSignOut}>logout</p>
+              <FcBusinessman></FcBusinessman>
+            </>
           ) : (
-            <NavLink to="/login">Login</NavLink>
+            <>
+              <NavLink to="/login">Login</NavLink>
+              <RiLoginCircleFill></RiLoginCircleFill>
+            </>
           )}
         </button>
       </div>
