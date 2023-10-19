@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "../components/Home/Home";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +14,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },
