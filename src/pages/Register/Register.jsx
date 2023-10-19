@@ -1,6 +1,20 @@
 import { NavLink } from "react-router-dom";
-
+import Tilt from "react-parallax-tilt";
+import useAuth from "../../Hooks/useAuth";
 const Register = () => {
+  const scale = 1.1;
+  const { createUsers } = useAuth();
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const name = form.name.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+    createUsers(email, password)
+      .then((res) => console.log(res?.user))
+      .catch((error) => console.error(error?.message));
+  };
   return (
     <div
       className="bg-no-repeat bg-center bg-cover"
@@ -11,7 +25,7 @@ const Register = () => {
       <section className="flex h-screen justify-center items-center  ">
         {/* only 2 thing to come out like glass "bg-white  bg-opacity-10" */}
         <div className="w-full bg-white  bg-opacity-10 max-w-sm p-4 border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 ">
-          <form className="space-y-6" action="#">
+          <form onSubmit={handleRegister} className="space-y-6" action="#">
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
               Sign up to our platform
             </h5>
@@ -76,12 +90,15 @@ const Register = () => {
                 Lost Password?
               </a>
             </div> */}
-            <button
-              type="submit"
-              className="w-full text-white bg-red-900 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
-            >
-              Sign Up to your account
-            </button>
+            <Tilt tiltEnable={false} scale={scale} transitionSpeed={2500}>
+              <button
+                type="submit"
+                className="w-full text-white bg-red-900 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+              >
+                Sign Up to your account
+              </button>
+            </Tilt>
+
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Have an account ?{" "}
               <NavLink

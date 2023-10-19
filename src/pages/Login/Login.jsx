@@ -1,6 +1,14 @@
 import { NavLink } from "react-router-dom";
-
+import Tilt from "react-parallax-tilt";
 const Login = () => {
+  const scale = 1.1;
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+  };
   return (
     <div
       className="bg-no-repeat bg-center bg-cover"
@@ -11,7 +19,7 @@ const Login = () => {
       <section className="flex h-screen justify-center items-center  ">
         {/* only 2 thing to come out like glass "bg-white  bg-opacity-10" */}
         <div className="w-full bg-white  bg-opacity-10 max-w-sm p-4 border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 ">
-          <form className="space-y-6" action="#">
+          <form onSubmit={handleLogin} className="space-y-6" action="#">
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">
               Sign in to our platform
             </h5>
@@ -63,12 +71,15 @@ const Login = () => {
                 Lost Password?
               </a>
             </div> */}
-            <button
-              type="submit"
-              className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-900 dark:hover:bg-red-600 dark:focus:ring-blue-800"
-            >
-              Login to your account
-            </button>
+            <Tilt tiltEnable={false} scale={scale} transitionSpeed={2500}>
+              <button
+                type="submit"
+                className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-900 dark:hover:bg-red-600 dark:focus:ring-blue-800"
+              >
+                Login to your account
+              </button>
+            </Tilt>
+
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Not registered?{" "}
               <NavLink
