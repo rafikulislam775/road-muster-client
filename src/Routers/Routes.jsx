@@ -9,6 +9,7 @@ import CarDetails from "../pages/CarDetails/CarDetails";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Contact from "../pages/Contact/Contact";
+import MyCarts from "../pages/MyCart/MyCarts";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
       {
         path: "/contactUs",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/myCarts",
+        element: <MyCarts></MyCarts>,
+        loader: () => fetch(`http://localhost:4000/myCarts`),
       },
     ],
   },
