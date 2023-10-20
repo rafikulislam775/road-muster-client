@@ -1,10 +1,11 @@
 // import { useState } from "react";
 import Tilt from "react-parallax-tilt";
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 const BrandCard = ({ data }) => {
   // const [scale, setScale] = useState(1.1);
   const scale = 1.1;
-  const { id, Img, brandName, title, category } = data;
+  const { Img, brandName, title, category } = data;
   console.log(category);
   return (
     <div>
@@ -37,6 +38,9 @@ const BrandCard = ({ data }) => {
       </Tilt>
     </div>
   );
+};
+BrandCard.propTypes = {
+  data: PropTypes.object,
 };
 
 export default BrandCard;

@@ -1,9 +1,9 @@
 import Tilt from "react-parallax-tilt";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 const BrandCars = ({ specificData }) => {
   const scale = 1.1;
-  const { category, img, name, rating, price, _id, shortDescription } =
-    specificData;
+  const { img, name, rating, price, _id } = specificData;
   // console.log(category);
   return (
     <div>
@@ -77,5 +77,7 @@ const BrandCars = ({ specificData }) => {
     </div>
   );
 };
-
+BrandCars.propTypes = {
+  specificData: PropTypes.object,
+};
 export default BrandCars;
