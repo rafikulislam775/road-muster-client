@@ -7,12 +7,14 @@ import AddProduct from "../pages/AddProduct/AddProduct";
 import SingleBrand from "../pages/singleBrand/SingleBrand";
 import CarDetails from "../pages/CarDetails/CarDetails";
 import PrivateRoute from "./privateRoute/PrivateRoute";
+import ErrorPage from "../pages/Error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
     // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
