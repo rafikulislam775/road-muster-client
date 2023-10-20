@@ -10,6 +10,7 @@ import PrivateRoute from "./privateRoute/PrivateRoute";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Contact from "../pages/Contact/Contact";
 import MyCarts from "../pages/MyCart/MyCarts";
+import About from "../pages/About/About";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addProduct",
-        element: <AddProduct></AddProduct>,
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/singleBrand/:category",
@@ -57,8 +62,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/myCarts",
-        element: <MyCarts></MyCarts>,
+
+        element: (
+          <PrivateRoute>
+            <MyCarts></MyCarts>
+          </PrivateRoute>
+        ),
         loader: () => fetch(`http://localhost:4000/myCarts`),
+      },
+      {
+        path: "/aboutUs",
+        element: <About></About>,
       },
     ],
   },
