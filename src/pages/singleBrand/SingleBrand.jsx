@@ -92,7 +92,7 @@ const SingleBrand = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-10">
           {specificData?.map((specificData) => (
             <BrandCars
               key={specificData._id}

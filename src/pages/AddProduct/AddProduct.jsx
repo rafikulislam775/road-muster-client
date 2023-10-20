@@ -40,8 +40,8 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="flex min-h-[85vh] justify-center items-center mx-20">
-      <div className=" flex-1 ">
+    <div className="flex min-h-screen justify-center items-center mx-20">
+      <div className=" flex-1 mt-40 ">
         <form onSubmit={handleAddProduct}>
           <div className="relative z-0 w-full mb-6 group">
             <input

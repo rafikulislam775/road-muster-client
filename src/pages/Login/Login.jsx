@@ -44,7 +44,7 @@ const Login = () => {
         backgroundImage: "url(https://i.ibb.co/wrVhFcF/lg-bg.jpg)",
       }}
     >
-      <section className="flex h-screen justify-center items-center  ">
+      <section className="flex min-h-screen py-36  justify-center items-center  ">
         {/* only 2 thing to come out like glass "bg-white  bg-opacity-10" */}
         <div className="w-full bg-white  bg-opacity-10 max-w-sm p-4 border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 ">
           <form onSubmit={handleLogin} className="space-y-6" action="#">

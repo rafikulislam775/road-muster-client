@@ -57,7 +57,14 @@ const Navbar = () => {
       </li>
       <li>
         {" "}
-        <NavLink to="/login">Login</NavLink>
+        <NavLink
+          to="/login"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "bg-red-800" : ""
+          }
+        >
+          Login
+        </NavLink>
       </li>
       <li>
         {" "}
@@ -75,7 +82,7 @@ const Navbar = () => {
   return (
     // <nav className="bg-transparent p-4 absolute w-full">
     // only for this background come to bottom the banner
-    <div className="navbar bg-transparent p-4 absolute w-full shadow-lg text-white  ">
+    <div className="navbar bg-transparent  p-4 absolute w-full shadow-lg text-white  ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
