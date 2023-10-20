@@ -1,8 +1,10 @@
 import Tilt from "react-parallax-tilt";
+import { Link } from "react-router-dom";
 const BrandCars = ({ specificData }) => {
   const scale = 1.1;
-  const { category, img, name, rating, price,_id, shortDescription } = specificData;
-  console.log(category);
+  const { category, img, name, rating, price, _id, shortDescription } =
+    specificData;
+  // console.log(category);
   return (
     <div>
       <div>
@@ -58,7 +60,7 @@ const BrandCars = ({ specificData }) => {
                 type="button"
                 data-ripple-light="true"
               >
-                Details
+                <Link to={`/details/${_id}`}>Details</Link>
               </button>
               <button
                 className="select-none rounded-lg bg-red-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
