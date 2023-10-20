@@ -47,7 +47,7 @@ const Navbar = () => {
       <li>
         {" "}
         <NavLink
-          to="/contact"
+          to="/contactUs"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "bg-red-800" : ""
           }

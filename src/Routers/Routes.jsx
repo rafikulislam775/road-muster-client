@@ -8,6 +8,7 @@ import SingleBrand from "../pages/singleBrand/SingleBrand";
 import CarDetails from "../pages/CarDetails/CarDetails";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 import ErrorPage from "../pages/Error/ErrorPage";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch(`http://localhost:4000/addProducts`),
+      },
+      {
+        path: "/contactUs",
+        element: <Contact></Contact>,
       },
     ],
   },
