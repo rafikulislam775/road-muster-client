@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import swal from "sweetalert";
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -13,6 +14,26 @@ const CarDetails = () => {
   }, [id, data]);
   const { img, shortDescription, name } = dataFound;
   console.log(dataFound);
+  const handleAddCart = () => {
+    fetch("http://localhost:4000/myCarts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(dataFound),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          swal(
+            "congratulation!",
+            "successfully added Your Products!",
+            "success"
+          );
+        }
+      });
+  };
   return (
     <div className="">
       <div className="flex justify-center items-center p-24">
@@ -28,7 +49,9 @@ const CarDetails = () => {
                 </h1>
 
                 <p className="py-6">{shortDescription}</p>
-                {/* <button className="btn btn-primary">Get Started</button> */}
+                <button onClick={handleAddCart} className="btn btn-secondary">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
