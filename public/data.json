@@ -3,36 +3,42 @@
     "id": 1,
     "brandName": "Tesla",
     "Img": "https://i.ibb.co/KwWsHRS/tesla.jpg",
-    "title": "Tesla Electric Vehicles"
+    "title": "Tesla Electric Vehicles",
+    "category": "tesla"
   },
   {
     "id": 2,
     "brandName": "Toyota",
     "Img": "https://i.ibb.co/jy8Bgb4/toyota.jpg",
-    "title": "Toyota Cars and Trucks"
+    "title": "Toyota Cars and Trucks",
+    "category": "toyota"
   },
   {
     "id": 3,
     "brandName": "Ferrari",
     "Img": "https://i.ibb.co/R3mWjDW/ferrari-removebg-preview-1.png",
-    "title": "Ferrari Sports Cars"
+    "title": "Ferrari Sports Cars",
+    "category": "ferrari"
   },
   {
     "id": 4,
     "brandName": "BMW",
     "Img": "https://i.ibb.co/HYgsD8h/bmw-removebg-preview.png",
-    "title": "BMW Luxury Vehicles"
+    "title": "BMW Luxury Vehicles",
+    "category": "bmw"
   },
   {
     "id": 5,
     "brandName": "Mercedes Benz",
     "Img": "https://i.ibb.co/JsZRJnP/Mercedes-Benz.png",
-    "title": "Mercedes-Benz Luxury Cars"
+    "title": "Mercedes-Benz Luxury Cars",
+    "category": "mercedesBenz"
   },
   {
     "id": 6,
     "brandName": "Mazda",
     "Img": "https://i.ibb.co/WnSvC3Z/mazda-3.jpg",
-    "title": "Mazda Innovative Vehicles"
+    "title": "Mazda Innovative Vehicles",
+    "category": "mazda"
   }
 ]

@@ -81,7 +81,7 @@ const AddProduct = () => {
               <option value="toyota">Toyota</option>
               <option value="ferrari">Ferrari</option>
               <option value="bmw">BMW</option>
-              <option value="mercedes Benz">Mercedes Benz</option>
+              <option value="mercedesBenz">Mercedes Benz</option>
               <option value="mazda">Mazda</option>
             </select>
           </div>

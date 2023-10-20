@@ -1,9 +1,11 @@
 // import { useState } from "react";
 import Tilt from "react-parallax-tilt";
+import { NavLink } from "react-router-dom";
 const BrandCard = ({ data }) => {
   // const [scale, setScale] = useState(1.1);
   const scale = 1.1;
-  const { id, Img, brandName, title } = data;
+  const { id, Img, brandName, title, category } = data;
+  console.log(category);
   return (
     <div>
       <Tilt tiltEnable={false} scale={scale} transitionSpeed={2500}>
@@ -21,13 +23,15 @@ const BrandCard = ({ data }) => {
             <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit"></p>
           </div>
           <div className="p-6 pt-0">
-            <button
-              className="select-none rounded-lg bg-red-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-              type="button"
-              data-ripple-light="true"
-            >
-              Details
-            </button>
+            <NavLink to={`/singleBrand/${category}`}>
+              <button
+                className="select-none rounded-lg bg-red-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button"
+                data-ripple-light="true"
+              >
+                See More
+              </button>
+            </NavLink>
           </div>
         </div>
       </Tilt>
