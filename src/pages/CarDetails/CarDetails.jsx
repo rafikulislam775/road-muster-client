@@ -7,32 +7,56 @@ const CarDetails = () => {
   const data = useLoaderData(null);
   const [dataFound, setDataFound] = useState({});
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState([]);
+  console.log(dataFound);
+  // Load the cart from localStorage when the component mounts
+  useEffect(() => {
+    const cartData = localStorage.getItem("cart");
+    if (cartData) {
+      setCart(JSON.parse(cartData));
+    }
+  }, []);
   useEffect(() => {
     const newData = data?.find((item) => item._id === id);
     setDataFound(newData);
     setLoading(false);
   }, [id, data]);
   const { img, shortDescription, name } = dataFound;
+
   console.log(dataFound);
   const handleAddCart = () => {
-    fetch("http://localhost:4000/myCarts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(dataFound),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          swal(
-            "congratulation!",
-            "successfully added Your Products!",
-            "success"
-          );
-        }
+    const isDuplicate = cart.find((item) => item._id === dataFound._id);
+    if (isDuplicate) {
+      swal({
+        title: "Already added!",
+        text: "No duplicates allowed!",
+        icon: "error",
+        button: "Ok!",
       });
+    } else {
+      const updatedCart = [...cart, dataFound];
+      setCart(updatedCart);
+      // Save the updated cart to localStorage
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      fetch("http://localhost:4000/myCarts", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(dataFound),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            swal(
+              "congratulation!",
+              "successfully added Your Products!",
+              "success"
+            );
+          }
+        });
+    }
   };
   return (
     <div className="">
