@@ -1,5 +1,5 @@
 import Tilt from "react-parallax-tilt";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 const BrandCars = ({ specificData }) => {
   const scale = 1.1;
@@ -67,7 +67,7 @@ const BrandCars = ({ specificData }) => {
                 type="button"
                 data-ripple-light="true"
               >
-                Update
+                <NavLink to={"/update"}>Update</NavLink>
               </button>
               {/* </NavLink> */}
             </div>

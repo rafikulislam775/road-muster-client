@@ -1,6 +1,7 @@
 import Tilt from "react-parallax-tilt";
 import Swal from "sweetalert2";
-const Carts = ({ cart }) => {
+
+const Carts = ({ cart, carts, setCarts }) => {
   const { img, name, rating, price, _id } = cart;
   const scale = 1.1;
   //added delete function
@@ -30,9 +31,13 @@ const Carts = ({ cart }) => {
             method: "DELETE",
           })
             .then((res) => res.json())
-            .catch((data) => {
+            .then((data) => {
               console.log(data);
-              if (data.deletedCount > 0) {
+              if (data.deletedCount >= 0) {
+                const remaining = carts?.filter(
+                  (newCart) => newCart._id !== _id
+                );
+                setCarts(remaining);
                 swalWithBootstrapButtons.fire(
                   "Deleted!",
                   "Your file has been deleted.",

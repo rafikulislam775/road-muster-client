@@ -11,6 +11,7 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import Contact from "../pages/Contact/Contact";
 import MyCarts from "../pages/MyCart/MyCarts";
 import About from "../pages/About/About";
+import UpdateProducts from "../components/UpdateProducts/UpdateProducts";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutUs",
         element: <About></About>,
+      },
+      {
+        path: "update",
+        element: <UpdateProducts></UpdateProducts>,
       },
     ],
   },
