@@ -45,7 +45,9 @@ const router = createBrowserRouter([
         path: "/singleBrand/:category",
         element: <SingleBrand></SingleBrand>,
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/addProducts/${params?.category}`),
+          fetch(
+            `https://road-muster-server-5w2kuaxlh-islam-rafikuls-projects.vercel.app/addProducts/${params?.category}`
+          ),
       },
       {
         path: "/details/:id",
@@ -55,7 +57,10 @@ const router = createBrowserRouter([
             <CarDetails></CarDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:4000/addProducts`),
+        loader: () =>
+          fetch(
+            `https://road-muster-server-5w2kuaxlh-islam-rafikuls-projects.vercel.app/addProducts`
+          ),
       },
       {
         path: "/contactUs",
@@ -69,7 +74,10 @@ const router = createBrowserRouter([
             <MyCarts></MyCarts>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:4000/myCarts`),
+        loader: () =>
+          fetch(
+            `https://road-muster-server-5w2kuaxlh-islam-rafikuls-projects.vercel.app/myCarts`
+          ),
       },
       {
         path: "/aboutUs",

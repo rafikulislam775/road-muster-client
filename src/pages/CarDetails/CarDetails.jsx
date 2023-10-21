@@ -25,7 +25,7 @@ const CarDetails = () => {
 
   console.log(dataFound);
   const handleAddCart = () => {
-    const isDuplicate = cart.find((item) => item._id === dataFound._id);
+    const isDuplicate = cart?.find((item) => item._id === dataFound._id);
     if (isDuplicate) {
       swal({
         title: "Already added!",
@@ -38,13 +38,16 @@ const CarDetails = () => {
       setCart(updatedCart);
       // Save the updated cart to localStorage
       localStorage.setItem("cart", JSON.stringify(updatedCart));
-      fetch("http://localhost:4000/myCarts", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(dataFound),
-      })
+      fetch(
+        "https://road-muster-server-5w2kuaxlh-islam-rafikuls-projects.vercel.app/myCarts",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(dataFound),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

@@ -27,9 +27,12 @@ const Carts = ({ cart, carts, setCarts }) => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:4000/myCarts/${_id}`, {
-            method: "DELETE",
-          })
+          fetch(
+            `https://road-muster-server-5w2kuaxlh-islam-rafikuls-projects.vercel.app/myCarts/${_id}`,
+            {
+              method: "DELETE",
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               console.log(data);

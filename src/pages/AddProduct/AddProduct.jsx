@@ -4,7 +4,7 @@ import swal from "sweetalert";
 const AddProduct = () => {
   const [selected, setSelected] = useState();
   const handleAddProduct = (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     const form = e.target;
     const img = form.img.value;
     const name = form.name.value;
@@ -12,7 +12,7 @@ const AddProduct = () => {
     const shortDescription = form.shortDescription.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    console.log(img, name, shortDescription, price, rating, category);
+    // console.log(img, name, shortDescription, price, rating, category);
     //create a new object with the getting data
     const newProducts = {
       img,
@@ -22,18 +22,21 @@ const AddProduct = () => {
       rating,
       category,
     };
-    console.log(newProducts);
+    // console.log(newProducts);
     //send data on server
-    fetch("http://localhost:4000/addProducts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProducts),
-    })
-      .then((res) => res.json())
+    fetch(
+      "https://road-muster-server-5w2kuaxlh-islam-rafikuls-projects.vercel.app/addProducts",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProducts),
+      }
+    )
+      .then((res) => res?.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           swal("Good job!", "successfully added your new Product!", "success");
         }
@@ -72,7 +75,7 @@ const AddProduct = () => {
             <label className="block  mb-2 text-sm font-medium">Category</label>
             <select
               value={selected}
-              onChange={(e) => setSelected(e.target.value)}
+              onChange={(e) => setSelected(e?.target.value)}
               id="countries"
               className="  text-sm text-gray-500  block w-full p-1 rounded-sm bg-gray-800  border-gray-600 border-b-2  bg-opacity-10  "
             >

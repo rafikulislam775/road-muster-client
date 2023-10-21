@@ -7,7 +7,9 @@ const SingleBrand = () => {
   // console.log(category);
 
   useEffect(() => {
-    fetch("http://localhost:4000/addProducts")
+    fetch(
+      "https://road-muster-server-5w2kuaxlh-islam-rafikuls-projects.vercel.app/addProducts"
+    )
       .then((response) => response.json())
       // 4. Setting *dogImage* to the image url that we received from the response above
       .then((allData) => setData(allData));
